@@ -11,7 +11,8 @@ $env:HTTP_PROXY='127.0.0.1:2080'
 $env:HTTPS_PROXY='127.0.0.1:2080'
 
 # 配置 scoop
-Set-Executionpolicy remotesigned -Scope currentuser
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 
 ## 配置安装目录
 $env:scoopLocal='D:\Scoop'
@@ -21,7 +22,7 @@ $env:scoopGlobal='D:\Scoop\Global'
 [System.Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:scoopGlobal, 'Machine')
 
 ## 安装
-Invoke-WebRequest -useb get.scoop.sh | Invoke-Expression
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 ## 配置 scoop 代理
 scoop config proxy 127.0.0.1:2080

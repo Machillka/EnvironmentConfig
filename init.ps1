@@ -26,3 +26,6 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 
 ## 配置 scoop 代理
 scoop config proxy 127.0.0.1:2080
+
+# 取消 uwp 网络回环代理
+foreach ($n in (get-appxpackage).packagefamilyname) {checknetisolation loopbackexempt -a -n="$n"}

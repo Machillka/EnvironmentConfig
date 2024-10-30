@@ -1,3 +1,6 @@
+# 更新 / 安装 powershell
+winget install --id Microsoft.Powershell --source winget
+
 # 激活 windows
 slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr -skms kms.0t.net.cn
@@ -12,7 +15,6 @@ $env:HTTPS_PROXY='127.0.0.1:2080'
 
 # 配置 scoop
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
 
 ## 配置安装目录
 $env:scoopLocal='D:\Scoop'
